@@ -11,6 +11,7 @@ class profil extends StatefulWidget {
 class _profilState extends State<profil> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _ageController = TextEditingController();
 
   double _result=0.00;
 
@@ -21,7 +22,7 @@ class _profilState extends State<profil> {
         title: Text('BMI Calculator'),
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Container(
 
@@ -46,8 +47,17 @@ class _profilState extends State<profil> {
               ),
             ),
             SizedBox(height: 15),
+            TextField(
+              controller: _ageController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'AGE',
+                icon: Icon(Icons.workspaces_outline),
+              ),
+            ),
+            SizedBox(height: 15),
             RaisedButton(
-              color: Colors.purple,
+              color: Colors.blue,
               child: Text(
                 "Calculate",
                 style: TextStyle(color: Colors.white),
@@ -58,7 +68,7 @@ class _profilState extends State<profil> {
             Text(
               _result == null ? "Enter Value" : "${_result.toStringAsFixed(2)}",
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.green,
                 fontSize: 19.4,
                 fontWeight: FontWeight.w500,
               ),

@@ -3,12 +3,8 @@ import 'package:fitnessapp1/anaSayfalar/plan.dart';
 import 'package:fitnessapp1/anaSayfalar/profil.dart';
 import 'package:fitnessapp1/anaSayfalar/relax.dart';
 import 'package:fitnessapp1/pages/login.dart';
-
-
 import 'package:fitnessapp1/service/auth_service.dart';
 import 'package:flutter/material.dart';
-
-
 
 class HomePage extends StatefulWidget {
   @override
@@ -47,27 +43,18 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const plan()),
+                  MaterialPageRoute(builder: (context) => plan()),
                 );
               },
               leading: Icon(Icons.calendar_today_outlined),
             ),
-            ListTile(
-              title: Text('Bağımsız'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const relax()),
-                );
-              },
-              leading: Icon(Icons.apps_outlined),
-            ),
+
             ListTile(
               title: Text('Egzersizlerim'),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const exercise()),
+                  MaterialPageRoute(builder: (context) => exercise()),
                 );
               },
               leading: Icon(Icons.list_alt_rounded),
@@ -89,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 _authService.signOut();
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  LoginPage()),
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
               leading: Icon(Icons.remove_circle),
@@ -106,7 +93,7 @@ class _HomePageState extends State<HomePage> {
         },
         children: [
           plan(),
-          relax(),
+
           exercise(),
           profil(),
         ],
@@ -117,17 +104,14 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.calendar_today_outlined),
                 label: 'Planım',
                 backgroundColor: Colors.blueAccent),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.apps_outlined),
-                label: 'Bağımsız',
-                backgroundColor: Colors.blueAccent),
+
             BottomNavigationBarItem(
                 icon: Icon(Icons.list_alt_rounded),
                 label: 'Egzersizlerim',
                 backgroundColor: Colors.blueAccent),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_rounded),
-                label: 'Profile',
+                label: 'Profil-BMI',
                 backgroundColor: Colors.blueAccent),
           ],
           currentIndex: _selectedIndex,

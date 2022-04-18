@@ -1,6 +1,8 @@
 import 'package:fitnessapp1/service/auth_service.dart';
 import 'package:fitnessapp1/pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:gender_picker/gender_picker.dart';
+import 'package:gender_picker/source/enums.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -11,8 +13,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordAgainController =
-  TextEditingController();
+  final TextEditingController _passwordAgainController = TextEditingController();
+
 
   AuthService _authService = AuthService();
 
@@ -43,6 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          _genderWidget(false, false),
                           TextField(
                               controller: _nameController,
                               style: TextStyle(
@@ -228,4 +231,19 @@ class _RegisterPageState extends State<RegisterPage> {
           ],
         ));
   }
+}
+Widget _genderWidget(bool _showOther, bool _alignment){
+  return Container(
+    child: GenderPickerWithImage(
+      showOtherGender: _showOther,
+      verticalAlignedText: _alignment,
+      onChanged: (Gender? _gender){},
+      selectedGender: Gender.Male,
+      selectedGenderTextStyle:
+      TextStyle(color: Color(0xFFC41A3B), fontWeight: FontWeight.bold),
+      unSelectedGenderTextStyle:
+      TextStyle(color: Color(0xFF1B1F32), fontWeight: FontWeight.bold),
+    ),
+
+  );
 }
