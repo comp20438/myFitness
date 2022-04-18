@@ -1,7 +1,6 @@
 import 'package:fitnessapp1/anaSayfalar/exercise.dart';
 import 'package:fitnessapp1/anaSayfalar/plan.dart';
 import 'package:fitnessapp1/anaSayfalar/profil.dart';
-import 'package:fitnessapp1/anaSayfalar/relax.dart';
 import 'package:fitnessapp1/pages/login.dart';
 import 'package:fitnessapp1/service/auth_service.dart';
 import 'package:flutter/material.dart';
